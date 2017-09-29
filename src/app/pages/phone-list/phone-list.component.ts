@@ -8,6 +8,8 @@ import { PhoneApiService } from '../../services/phone-api.service';
 })
 export class PhoneListComponent implements OnInit {
 
+  isFormOn = false;
+
   phones: any[] = [];
 
   constructor(
@@ -21,6 +23,15 @@ export class PhoneListComponent implements OnInit {
           this.phones = list;
         }
       );
+  }
+
+  showForm() {
+    this.isFormOn = !this.isFormOn;
+  }
+
+  handleNewPhone(phone) {
+    this.phones.unshift(phone);
+    this.isFormOn = false;
   }
 
 }
