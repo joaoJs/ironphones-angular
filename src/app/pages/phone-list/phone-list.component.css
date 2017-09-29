@@ -1,0 +1,10 @@
+img {
+  width: 100%;
+
+}
+
+.cont {
+  width: 25%;
+  height: 400px;
+  display: inline-block;
+}
