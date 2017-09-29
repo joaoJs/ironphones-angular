@@ -26,4 +26,10 @@ export class PhoneApiService {
     )
   }
 
+  deletePhone(id: string) {
+    return this.httpThang.delete(
+      this.baseUrl + '/api/phones/' + id
+    );
+  }
+
 }

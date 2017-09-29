@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PhoneApiService } from '../../services/phone-api.service';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-phone-details',
@@ -13,7 +13,8 @@ export class PhoneDetailsComponent implements OnInit {
 
   constructor(
     private phoneThang: PhoneApiService,
-    private activatedThang: ActivatedRoute
+    private activatedThang: ActivatedRoute,
+    private routerThang: Router
   ) { }
 
   ngOnInit() {
@@ -29,6 +30,15 @@ export class PhoneDetailsComponent implements OnInit {
         }
       )
 
+  }
+
+  askForDeletion() {
+    this.phoneThang.deletePhone(this.phoneInfo._id)
+      .subscribe(
+        () => {
+            this.routerThang.navigate(['']);
+        }
+      );
   }
 
 }
