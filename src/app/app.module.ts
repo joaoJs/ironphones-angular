@@ -10,6 +10,7 @@ import { PhoneListComponent } from './pages/phone-list/phone-list.component';
 import { PhoneDetailsComponent } from './pages/phone-details/phone-details.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { PhoneFormComponent } from './components/phone-form/phone-form.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PhoneFormComponent } from './components/phone-form/phone-form.component
     PhoneListComponent,
     PhoneDetailsComponent,
     NotFoundComponent,
-    PhoneFormComponent
+    PhoneFormComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
