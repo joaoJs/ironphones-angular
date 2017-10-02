@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { PhoneApiService } from './services/phone-api.service';
 import { FormsModule } from '@angular/forms';
+import { AuthApiService } from './services/auth-api.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,7 +28,8 @@ import { SignupComponent } from './pages/signup/signup.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [PhoneApiService],
+  providers: [PhoneApiService,
+              AuthApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
