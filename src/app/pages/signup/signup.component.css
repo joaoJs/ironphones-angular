@@ -1,0 +1,17 @@
+.form-container {
+  overflow: auto;
+
+}
+
+.form-wrapper {
+  box-sizing: border-box;
+  width: 50%;
+  padding: 3%;
+  float: left;
+}
+
+.error {
+  display: inline-block;
+  color: crimson;
+  border: 2px solid crimson;
+}

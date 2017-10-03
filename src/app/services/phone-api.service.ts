@@ -22,7 +22,7 @@ export class PhoneApiService {
 
   postPhone(phoneObj: PhoneInfo) {
     return this.httpThang.post(
-      this.baseUrl + '/api/phones', phoneObj
+      this.baseUrl + '/api/phones', phoneObj, { withCredentials: true }
     )
   }
 

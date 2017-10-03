@@ -42,4 +42,11 @@ export class AuthApiService {
     )
   }
 
+  logOut() {
+    return this.http.delete(
+      this.baseUrl + '/api/logout',
+      { withCredentials: true }
+    );
+  }
+
 }
