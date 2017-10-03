@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PhoneApiService } from '../../services/phone-api.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AuthApiService } from '../../services/auth-api.service';
 
 @Component({
   selector: 'app-phone-details',
@@ -10,11 +11,13 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class PhoneDetailsComponent implements OnInit {
 
   phoneInfo: any = {};
+  userInfo: any;
 
   constructor(
     private phoneThang: PhoneApiService,
     private activatedThang: ActivatedRoute,
-    private routerThang: Router
+    private routerThang: Router,
+    private authApi: AuthApiService
   ) { }
 
   ngOnInit() {
@@ -29,6 +32,15 @@ export class PhoneDetailsComponent implements OnInit {
             )
         }
       )
+
+      this.authApi.getLoginStatus()
+        .subscribe(
+          (yes: any) => {
+            if (yes.isLoggedIn) {
+              this.userInfo = yes.userInfo;
+            }
+          }
+        )
 
   }
 
