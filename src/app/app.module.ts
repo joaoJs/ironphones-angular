@@ -4,6 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { PhoneApiService } from './services/phone-api.service';
 import { FormsModule } from '@angular/forms';
 import { AuthApiService } from './services/auth-api.service';
+import { NeedsLoginGuardService } from './guards/needs-login-guard.service';
+import { HackGuardService } from './guards/hack-guard.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,7 +33,9 @@ import { MyPhonesComponent } from './pages/my-phones/my-phones.component';
     FormsModule
   ],
   providers: [PhoneApiService,
-              AuthApiService],
+              AuthApiService,
+              NeedsLoginGuardService,
+              HackGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

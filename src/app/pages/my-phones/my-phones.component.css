@@ -1,0 +1,9 @@
+.error {
+  height: 300px;
+  background: crimson;
+  text-align: center;
+}
+
+.error h3 {
+  color: white;
+}

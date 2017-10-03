@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthApiService } from './services/auth-api.service';
 import { Router } from '@angular/router';
 
@@ -7,14 +7,30 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'app';
+
+  userInfo: any;
 
   constructor(
     private apiService: AuthApiService,
     private router: Router
   ) {
 
+  }
+
+  ngOnInit() {
+    this.apiService.getLoginStatus()
+      .subscribe(
+        (user: any) =>{
+          if (user.isLoggedIn) {
+            this.userInfo = user.userInfo
+          }
+          else {
+            this.userInfo = null;
+          }
+        }
+      )
   }
 
   logMeOut() {

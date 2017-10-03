@@ -1,5 +1,9 @@
 <h2> My Phones </h2>
 
+<div *ngIf="errorMessage !== ''" class="error">
+  <h3>{{errorMessage}}</h3>
+</div>
+
 <ul>
   <li *ngFor="let phone of myPhones">
     <h3> {{ phone.name }}</h3>
