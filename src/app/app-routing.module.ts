@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: '',              component: PhoneListComponent },
   { path: 'phone/:id',     component: PhoneDetailsComponent },
   { path: 'signup',        component: SignupComponent},
+  { path: 'login',         component: SignupComponent},
   { path: '**',            component: NotFoundComponent }
 ];
 

@@ -1,3 +1,8 @@
+<div *ngIf="userInfo">
+  <p> Hello, user {{ userInfo.username }}.</p>
+  <p> Did you know your ID is <b>{{userInfo._id}}?</b></p>
+</div>
+
 <h2> Our Phones </h2>
 
 <button (click)="showForm()"> Add Phone </button>

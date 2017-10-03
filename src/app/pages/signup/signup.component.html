@@ -3,7 +3,11 @@
 <p class="error" *ngIf="errorMessage !== ''">
   {{errorMessage}}
 </p>
+<p class="error" *ngIf="loginError !== ''">
+  {{loginError}}
+</p>
 
+<div>
 <form (ngSubmit)="signupSubmit()">
   <label for="fullName"> FullName </label>
   <input  id="fullName" type="text" placeholder="Djana"
@@ -16,9 +20,28 @@
   <br>
 
   <label for="password"> Password </label>
-  <input  id="password" type="text" placeholder="Djana-vux-33"
+  <input  id="password" type="password" placeholder="****"
     name="password" [(ngModel)]="newUser.signupPassword">
   <br>
 
-  <button> Submit </button>
+  <button> Sign Up </button>
 </form>
+
+  <h2> Log In </h2>
+
+<form (ngSubmit)="loginSubmit()">
+
+  <label for="lusername"> Username </label>
+  <input  id="lusername" type="text" placeholder="Djana"
+    name="username" [(ngModel)]="loginUser.loginUsername">
+  <br>
+
+  <label for="lpassword"> Password </label>
+  <input  id="lpassword" type="password" placeholder="****"
+    name="password" [(ngModel)]="loginUser.loginPassword">
+  <br>
+
+  <button> Log In </button>
+</form>
+
+</div>

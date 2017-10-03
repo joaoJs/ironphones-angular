@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { SignupInfo } from '../interfaces/signup-info';
+import { LoginInfo } from '../interfaces/login-info';
 
 @Injectable()
 export class AuthApiService {
@@ -14,8 +15,31 @@ export class AuthApiService {
   postSignup(userInfo: SignupInfo) {
     return this.http.post(
       this.baseUrl + '/api/process-signup',
-      userInfo
+      userInfo,
+      { withCredentials: true }
     );
+  }
+
+  getLoginStatus() {
+    return this.http.get(
+      this.baseUrl + '/api/checklogin',
+      {withCredentials: true}
+    )
+  }
+
+  checkLoginStatus() {
+    return this.http.get(
+      this.baseUrl + '/api/checklogin',
+      { withCredentials: true }
+    );
+  }
+
+  postLogin(info: LoginInfo) {
+    return this.http.post(
+      this.baseUrl + '/api/process-login',
+      info,
+      {withCredentials: true}
+    )
   }
 
 }
