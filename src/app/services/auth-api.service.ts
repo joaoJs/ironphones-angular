@@ -4,11 +4,13 @@ import { SignupInfo } from '../interfaces/signup-info';
 import { LoginInfo } from '../interfaces/login-info';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
+import { environment } from '../../environments/environment';
+
 
 @Injectable()
 export class AuthApiService {
 
-  baseUrl: string = 'http://localhost:3000';
+  baseUrl: string = environment.apiUrl;
 
   // the thing that receive the changes
   loginStatusSubject = new BehaviorSubject<any>({isLoggedIn: false});
@@ -57,7 +59,7 @@ export class AuthApiService {
     return loginStatusRequest;
   }
 
-  
+
 
   postLogin(info: LoginInfo) {
     const loginRequest =

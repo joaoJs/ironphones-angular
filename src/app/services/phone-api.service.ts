@@ -3,10 +3,12 @@ import { HttpClient } from '@angular/common/http';
 
 import {PhoneInfo } from '../interfaces/phone-info';
 
+import { environment } from '../../environments/environment';
+
 @Injectable()
 export class PhoneApiService {
 
-  baseUrl: string = 'http://localhost:3000';
+  baseUrl: string = environment.apiUrl;
 
   constructor(
     private httpThang: HttpClient
