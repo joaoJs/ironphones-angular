@@ -10,6 +10,8 @@ export class MyPhonesComponent implements OnInit {
 
   myPhones: any[] = [];
 
+  errorMessage: string = '';
+
   constructor(
     private phoneService: PhoneApiService
   ) { }
@@ -20,6 +22,14 @@ export class MyPhonesComponent implements OnInit {
         (data: any) => {
           console.log('Success my phones ---> ', data);
           this.myPhones = data;
+        },
+        (err) => {
+          if (err.status === 401) {
+            this.errorMessage = "You need to be logged in.";
+          }
+          else {
+            this.errorMessage = "Something went wrong. Try again later."
+          }
         }
       )
   }
