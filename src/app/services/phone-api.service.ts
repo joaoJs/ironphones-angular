@@ -33,4 +33,11 @@ export class PhoneApiService {
     );
   }
 
+  getMyPhones() {
+    return this.httpThang.get(
+      this.baseUrl + '/api/myphones',
+      { withCredentials: true }
+    );
+  }
+
 }

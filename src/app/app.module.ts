@@ -12,6 +12,7 @@ import { PhoneDetailsComponent } from './pages/phone-details/phone-details.compo
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { PhoneFormComponent } from './components/phone-form/phone-form.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { MyPhonesComponent } from './pages/my-phones/my-phones.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SignupComponent } from './pages/signup/signup.component';
     PhoneDetailsComponent,
     NotFoundComponent,
     PhoneFormComponent,
-    SignupComponent
+    SignupComponent,
+    MyPhonesComponent
   ],
   imports: [
     BrowserModule,
